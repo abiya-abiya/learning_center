@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Kurslar ro‘yxati{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Kurslar ro‘yxati</h2>
+    <a href="{% url 'course_create' %}" class="btn btn-primary">+ Yangi kurs qo‘shish</a>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Kurs nomi</th>
+                        <th>Davomiyligi</th>
+                        <th>Narxi</th>
+                        <th>Batafsil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for course in courses %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ course.name }}</td>
+                        <td>{{ course.duration_months }} oy</td>
+                        <td>{{ course.price }} so‘m</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-outline-info" data-bs-toggle="modal" data-bs-target="#courseModal{{ course.id }}">
+                                Batafsil
+                            </button>
+
+                            <div class="modal fade" id="courseModal{{ course.id }}" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">{{ course.name }}</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p><strong>Davomiyligi:</strong> {{ course.duration_months }} oy</p>
+                                            <p><strong>Narxi:</strong> {{ course.price }} so‘m</p>
+                                            <p><strong>Tavsif:</strong> {{ course.description|default:"Tavsif mavjud emas" }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center py-3">Hozircha kurslar mavjud emas.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

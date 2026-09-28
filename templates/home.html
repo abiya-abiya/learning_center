@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Bosh sahifa | O‘quv markazi{% endblock %}
+
+{% block content %}
+<div class="row g-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Kurslar soni</h5>
+                <p class="card-text display-5 fw-bold">{{ courses_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Guruhlar soni</h5>
+                <p class="card-text display-5 fw-bold">{{ groups_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">O‘qituvchilar soni</h5>
+                <p class="card-text display-5 fw-bold">{{ teachers_count }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Faol o‘quvchilar soni</h5>
+                <p class="card-text display-5 fw-bold">{{ active_students_count }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+[
+  {
+    "model": "center.course",
+    "pk": 1,
+    "fields": {
+      "name": "Python Backend (Django)",
+      "duration_months": 6,
+      "price": "1200000.00",
+      "description": "Python, Django, PostgreSQL va REST API asoslari."
+    }
+  },
+  {
+    "model": "center.course",
+    "pk": 2,
+    "fields": {
+      "name": "Frontend Web Dasturlash",
+      "duration_months": 5,
+      "price": "1000000.00",
+      "description": "HTML, CSS, JavaScript va React kursi."
+    }
+  },
+  {
+    "model": "center.teacher",
+    "pk": 1,
+    "fields": {
+      "full_name": "Anvar Aliyev",
+      "phone": "+998901234567",
+      "specialization": "Backend Developer"
+    }
+  },
+  {
+    "model": "center.teacher",
+    "pk": 2,
+    "fields": {
+      "full_name": "Nodira Karimova",
+      "phone": "+998939876543",
+      "specialization": "Frontend Developer"
+    }
+  },
+  {
+    "model": "center.group",
+    "pk": 1,
+    "fields": {
+      "name": "PY-101",
+      "course": 1,
+      "teacher": 1,
+      "start_date": "2026-10-01",
+      "lesson_time": "14:00:00"
+    }
+  },
+  {
+    "model": "center.group",
+    "pk": 2,
+    "fields": {
+      "name": "FE-201",
+      "course": 2,
+      "teacher": 2,
+      "start_date": "2026-10-05",
+      "lesson_time": "16:00:00"
+    }
+  },
+  {
+    "model": "center.student",
+    "pk": 1,
+    "fields": {
+      "full_name": "Jasur Rahimov",
+      "phone": "+998911112233",
+      "group": 1,
+      "joined_date": "2026-09-28",
+      "is_active": true
+    }
+  },
+  {
+    "model": "center.student",
+    "pk": 2,
+    "fields": {
+      "full_name": "Madina Ergasheva",
+      "phone": "+998944445566",
+      "group": 1,
+      "joined_date": "2026-09-28",
+      "is_active": true
+    }
+  },
+  {
+    "model": "center.student",
+    "pk": 3,
+    "fields": {
+      "full_name": "Rustam Qodirov",
+      "phone": "+998977778899",
+      "group": 2,
+      "joined_date": "2026-09-28",
+      "is_active": false
+    }
+  }
+]

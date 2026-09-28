@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Yangi kurs qo‘shish{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-sm">
+            <div class="card-header bg-white">
+                <h4 class="mb-0">Yangi kurs qo‘shish</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label class="form-label">Kurs nomi</label>
+                        {{ form.name }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Davomiyligi (oy)</label>
+                        {{ form.duration_months }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Narxi</label>
+                        {{ form.price }}
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Tavsif</label>
+                        {{ form.description }}
+                    </div>
+                    <button type="submit" class="btn btn-success">Saqlash</button>
+                    <a href="{% url 'course_list' %}" class="btn btn-secondary">Bekor qilish</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}O‘quvchini o‘chirishni tasdiqlash{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card border-danger shadow-sm">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0">O‘quvchini o‘chirishni tasdiqlash</h4>
+            </div>
+            <div class="card-body">
+                <p>Haqiqatan ham <strong>{{ student.full_name }}</strong> nomli o‘quvchini o‘chirib tashlamoqchimisiz?</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Ha, o‘chirilsin</button>
+                    <a href="{% url 'student_list' %}" class="btn btn-secondary">Bekor qilish</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

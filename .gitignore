@@ -1,0 +1,20 @@
+# Virtual muhit
+venv/
+env/
+ENV/
+
+# Python kesh fayllari
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ma’lumotlar bazasi
+db.sqlite3
+db.sqlite3-journal
+
+# Muhit o‘zgaruvchilari
+.env
+
+# Muharrir sozlamalari
+.vscode/
+.idea/
